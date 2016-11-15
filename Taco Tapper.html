@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!-- saved from url=(0026)https://hayjame.github.io/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, max-scale=1, user-scalable=No">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" type="text/css" href="./Taco Tapper_files/mystyle.css">
+    <link rel="shortcut icon" href="https://hayjame.github.io/taco.png">
+    <title>Taco Tapper</title>
+	</head>
+<body>
+<audio controls="" loop=""><source src="bounce.mp3" type="audio/mpeg"></audio>
+	<h1>Welcome to Taco Tapper</h1>
+<h3>Where you can satisfy all of your taco tapping needs!</h3>
+   <input type="image" id="taco" src="./Taco Tapper_files/Taco.PNG" onclick="gainTacos()">
+	<button id="perSecondButton" onclick="perSecond()">Buy Clicker</button>
+        <button id="perSecondPerSecondButton" onclick="perSecondPerSecond">Buy Spicy Sauce</button>
+    <script>       
+    var counter = 0;
+    var perSecondCounter = 0;
+    var perSecondCost = 10;
+    function gainTacos(){
+        counter++;
+        document.getElementById("counter1").innerHTML = counter + " Tacos"; 
+    }
+    function perSecond(){
+	if(counter >= perSecondCost) {
+		perSecondCounter++;
+		counter -= perSecondCost;
+		perSecondCost += 1;
+		document.getElementById("p/s").innerHTML= perSecondCounter + " Tacos per second";
+                document.getElementById("counter1").innerHTML = counter + " Tacos";
+		document.getElementById("clickerCost").innerHTML = "1 clicker costs " + perSecondCost + " Tacos";
+	}
+	else{
+	alert("Not enough tacos!");	
+	}
+    }
+    setInterval(second,1000);
+            function second (){
+                  counter += perSecondCounter;
+                  document.getElementById("counter1").innerHTML = counter + " Tacos";
+	    }           
+    </script>
+     <div id="counter1">7602 Tacos</div>
+	<div id="p/s">765 Tacos per second</div>
+<div id="clickerCost">1 clicker costs 775 Tacos</div>
+	<div></div>
+	<p>Please click <a href="https://goo.gl/forms/J2qBylhPKSB4NGHI3">this</a> link to fill out a survey!</p>
+        
+</body></html>
